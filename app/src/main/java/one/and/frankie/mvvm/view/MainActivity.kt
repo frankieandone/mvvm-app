@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.countries.observe(this, Observer { countries ->
             if (countries != null) {
                 countriesAdapter.updateCountries(countries)
+                rc_countries_list.visibility = View.VISIBLE
             }
         })
         viewModel.countryLoadError.observe(this, Observer { isError: Boolean? ->

@@ -14,6 +14,7 @@
             >
 
         <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_countries_list"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -24,11 +25,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/recyclerView"
                 />
 
         <TextView
-                android:id="@+id/list_error"
+                android:id="@+id/tv_list_error"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:text="@string/error_text"
@@ -44,16 +44,16 @@
                 />
 
         <ProgressBar
-                android:id="@+id/loading_view"
+                android:id="@+id/pg_loading_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/list_error"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_list_error"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="@+id/list_error"
+                app:layout_constraintTop_toTopOf="@+id/tv_list_error"
                 />
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.SwipeRefreshLayout>

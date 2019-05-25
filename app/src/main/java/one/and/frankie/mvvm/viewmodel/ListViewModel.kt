@@ -6,16 +6,22 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import one.and.frankie.mvvm.di.DaggerApiComponent
 import one.and.frankie.mvvm.model.CountriesService
 import one.and.frankie.mvvm.model.Country
+import javax.inject.Inject
 
 class ListViewModel : ViewModel() {
-    private val countriesService = CountriesService()
+    @Inject lateinit var countriesService: CountriesService
     private val disposable = CompositeDisposable()
 
     val countries = MutableLiveData<List<Country>>()
     val countryLoadError = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
+
+    init {
+        DaggerApiComponent.create().inject(this)
+    }
 
     fun refresh() {
         fetchCountries()

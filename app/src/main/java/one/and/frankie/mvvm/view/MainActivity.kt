@@ -11,7 +11,7 @@ import one.and.frankie.mvvm.R
 import one.and.frankie.mvvm.viewmodel.ListViewModel
 
 class MainActivity : AppCompatActivity() {
-    lateinit var viewModel: ListViewModel
+    private lateinit var viewModel: ListViewModel
     private val countriesAdapter = CountryListAdapter(arrayListOf())
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,10 +26,14 @@ class MainActivity : AppCompatActivity() {
             adapter = countriesAdapter
         }
 
+        srl_main.setOnRefreshListener {
+            srl_main.isRefreshing = false
+            viewModel.refresh()
+        }
         observeViewModel()
     }
 
-    fun observeViewModel() {
+    private fun observeViewModel() {
         viewModel.countries.observe(this, Observer { countries ->
             if (countries != null) {
                 countriesAdapter.updateCountries(countries)

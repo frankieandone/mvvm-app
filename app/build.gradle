@@ -52,6 +52,7 @@ dependencies {
 
     // Mockito.
     testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+    testImplementation "android.arch.core:core-testing:$lifeCycleVersion"
 
     // Retrofit.
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"

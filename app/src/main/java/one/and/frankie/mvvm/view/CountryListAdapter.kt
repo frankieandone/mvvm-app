@@ -7,14 +7,22 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_country.view.*
 import one.and.frankie.mvvm.R
 import one.and.frankie.mvvm.model.Country
+import one.and.frankie.mvvm.util.getProgressDrawable
+import one.and.frankie.mvvm.util.loadImage
 
 class CountryListAdapter(var countries: ArrayList<Country>) :
     RecyclerView.Adapter<CountryListAdapter.CountryViewHolder>() {
 
     class CountryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val ivCountryFlag = view.iv_country_flag
         private val tvCountryName = view.tv_country_name
+        private val tvCountryCapital = view.tv_country_capital
+        private val progressDrawable = getProgressDrawable(view.context)
+
         fun bind(country: Country) {
             tvCountryName.text = country.name
+            tvCountryCapital.text = country.capital
+            ivCountryFlag.loadImage(country.flag, progressDrawable)
         }
     }
 

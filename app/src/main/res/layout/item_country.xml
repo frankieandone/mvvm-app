@@ -4,9 +4,34 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_height"
         >
-    <TextView
-            android:id="@+id/tv_country_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+    <ImageView
+            android:id="@+id/iv_flag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="@dimen/standard_padding"
             />
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            >
+        <TextView
+                android:id="@+id/tv_country_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="country"
+                style="@style/Title"
+                />
+
+        <TextView
+                android:id="@+id/tv_capital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="capital"
+                style="@style/Text"
+                />
+    </LinearLayout>
 </LinearLayout>

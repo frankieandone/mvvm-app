@@ -5,7 +5,7 @@
         android:layout_height="@dimen/layout_height"
         >
     <TextView
-            android:id="@+id/name"
+            android:id="@+id/tv_country_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
